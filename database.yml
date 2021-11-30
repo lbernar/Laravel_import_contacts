@@ -10,12 +10,5 @@ services:
             MYSQL_DATABASE: mydb
             MYSQL_USER: user
             MYSQL_PASSWORD: Atd9qecg4DVTrp7Y
-    
-        volumes: 
-            - ./init:/docker-entrypoint-initdb.d
-
-    adminer:
-        image: adminer
-        restart: always
         ports: 
             - 33061:3306
