@@ -229,8 +229,12 @@ return [
     ],
 
     'db_fields' => [
-        'first_name',
-        'last_name',
+        'name',
+        'birthday',
+        'phone',
+        'address',
+        'credit_card',
+        'franchise',
         'email'
     ]
 
