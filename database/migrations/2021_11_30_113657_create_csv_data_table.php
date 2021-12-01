@@ -18,6 +18,7 @@ class CreateCsvDataTable extends Migration
             $table->string('csv_filename');
             $table->boolean('csv_header')->default(0);
             $table->longText('csv_data');
+            $table->string('csv_status');
             $table->timestamps();
         });
     }

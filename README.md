@@ -16,7 +16,8 @@ Also showing how to deal with CSV files with/without header rows, using plain PH
 - Run __php artisan key:generate__
 - Run __docker-compose -f database.yml up -d__
 - Run __php artisan migrate__
+- Run __php artisan db:seed__
 - Run __php artisan serve__
 - That's it - load the homepage
-- Login to the application, using the user test@test.com, with the password: test
+- Login to the application, using the user test@gmail.com, with the password: password
 ---

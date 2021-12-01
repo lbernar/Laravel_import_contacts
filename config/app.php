@@ -234,7 +234,6 @@ return [
         'phone',
         'address',
         'credit_card',
-        'franchise',
         'email'
     ]
 

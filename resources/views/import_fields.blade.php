@@ -42,7 +42,7 @@
                                 </table>
                             </div>
                             <button type="submit" class="btn btn-primary">
-                                Import Data
+                                Process Data
                             </button>
                         </form>
                     </div>
