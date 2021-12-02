@@ -12,6 +12,9 @@
 */
 Route::auth();
 Route::get('/', [ 'middleware' => 'auth', 'uses' => 'HomeController@index' ]);
+Route::get('/home', [ 'middleware' => 'auth', 'uses' => 'HomeController@index' ])->name('home');
 Route::get('/import_file', 'ImportController@getImport')->name('import');
-Route::post('/import_parse', 'ImportController@parseImport')->name('import_parse');
 Route::get('/import_status', 'ImportController@statusImport')->name('import_status');
+Route::post('/import_parse', 'ImportController@parseImport')->name('import_parse');
+Route::post('/import_process', 'ImportController@processImport')->name('import_process');
+

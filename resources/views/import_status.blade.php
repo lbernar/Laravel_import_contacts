@@ -8,8 +8,13 @@
                     <div class="panel-heading">CSV Report</div>
                     <div class="panel-body">
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-striped">
                                 <thead>
+                                    <tr>
+                                        <a class="btn btn-primary" href="{{ route('home') }}" role="button">List Files</a>
+                                        <a class="btn btn-primary" href="{{ route('import_status') }}" role="button">Imported Contacts</a>
+                                        <a class="btn btn-primary" href="{{ route('import') }}" role="button">Import Contacts</a>
+                                    </tr>
                                     <tr>
                                       <th scope="col">Name</th>
                                       <th scope="col">Birthday</th>

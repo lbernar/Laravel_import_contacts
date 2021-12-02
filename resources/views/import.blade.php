@@ -8,6 +8,9 @@
                     <div class="panel-heading">CSV Import</div>
 
                     <div class="panel-body">
+                        <a class="btn btn-primary" href="{{ route('home') }}" role="button">List Files</a>
+                        <a class="btn btn-primary" href="{{ route('import_status') }}" role="button">Imported Contacts</a>
+                        <a class="btn btn-primary" href="{{ route('import') }}" role="button">Import Contacts</a>
                         <form class="form-horizontal" method="POST" action="{{ route('import_parse') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
 

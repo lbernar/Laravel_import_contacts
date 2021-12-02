@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\CsvData;
 
 class HomeController extends Controller
 {
@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('import');
+        $data = CsvData::select('csv_filename', 'csv_status')->where('user_id', Auth::user()->id)->get();
+        $csv_data = json_decode($data, true);
+        return view('home', compact('csv_data'));
     }
 }
