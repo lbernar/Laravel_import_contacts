@@ -12,3 +12,4 @@ services:
             MYSQL_PASSWORD: Atd9qecg4DVTrp7Y
         ports: 
             - 33061:3306
+            
