@@ -19,6 +19,6 @@ Simple project showing how to import data from CSV file, also matching CSV colum
 - Login to the application, using the user test@gmail.com, with the password: password
 - The Sample CSV file is located in the root of the project, the file name is sample.csv
 - Create an entry on your crontab with the following information:
-- __*/10 * * * * <PATH TO THE PROJECT>/Laravel_import_contacts/contacts_importer.sh >>  <PATH TO THE PROJECT>/Laravel_import_contacts/storage/logs/csv_importer.logs2>&1__
+- __*/10 * * * * PATH TO THE PROJECT/Laravel_import_contacts/contacts_importer.sh >>  PATH TO THE PROJECT/Laravel_import_contacts/storage/logs/csv_importer.logs2>&1__
 
 ---
