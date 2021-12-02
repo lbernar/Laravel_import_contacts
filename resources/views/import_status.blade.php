@@ -27,12 +27,20 @@
                                 </thead>
                                 @foreach ($contact_data as $row)
                                     <tr>
-                                    @foreach ($row as $key => $value)
-                                        <td>{{ $value }}</td>
-                                    @endforeach
+                                        <td>{{$row->name}}</td>
+                                        <td>{{$row->birthday}}</td>
+                                        <td>{{$row->phone}}</td>
+                                        <td>{{$row->address}}</td>
+                                        <td>{{$row->last_digits}}</td>
+                                        <td>{{$row->franchise}}</td>
+                                        <td>{{$row->email}}</td>
                                     </tr>
                                 @endforeach
+                                <div >
+                                    {{ $contact_data->links() }}
+                                </div>
                             </table>
+                            
                         </div>
                     </div>
                 </div>

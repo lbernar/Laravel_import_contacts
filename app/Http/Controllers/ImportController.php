@@ -28,19 +28,18 @@ class ImportController extends Controller
         $csv_filename = explode("/", $path_org)[1];
         $path = storage_path('app/');
         if ($request->has('header')) {
-            $data = Excel::load($path, function($reader) {})->get()->toArray();
+            $csv_data = Excel::load($path, function($reader) {})->get()->toArray();
         } else {
-            $data = array_map('str_getcsv', file($path.$path_org));
+            $csv_data = array_map('str_getcsv', file($path.$path_org));
         }
 
-        if (count($data) > 0) {
+        if (count($csv_data) > 0) {
             $csv_header_fields = [];
             if ($request->has('header')) {
-                foreach ($data[0] as $key => $value) {
+                foreach ($csv_data[0] as $key => $value) {
                     $csv_header_fields[] = $key;
                 }
             }
-            $csv_data = array_slice($data, 0, 2);
             $user_id = Auth::user()->id;
             $csv_data_file = CsvData::create([
                 'csv_filename' => $csv_filename,
@@ -68,8 +67,7 @@ class ImportController extends Controller
 
     public function statusImport()
     {
-        $data = Contact::select('name', 'birthday', 'phone', 'address', 'last_digits', 'franchise', 'email')->where('user_id', Auth::user()->id)->get();
-        $contact_data = json_decode($data, true);
+        $contact_data = Contact::select('name', 'birthday', 'phone', 'address', 'last_digits', 'franchise', 'email')->where('user_id', Auth::user()->id)->paginate(10);
         return view('import_status', compact('contact_data'));
     }
 
